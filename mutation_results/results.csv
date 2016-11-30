@@ -1,0 +1,2 @@
+CurrentTotalRuntime,TestNo,TestRuntimeOriginal,KilledByTest,AnalyzedByTest,CoveredByTest,TotalKilled,TotalFailure,TotalException,TotalTimeout,LiveMutants,TotalAnalyzed
+917,1,24,138,150,150,138,138,0,0,12,150
