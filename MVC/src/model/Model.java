@@ -4,7 +4,12 @@ import view.View;
 
 public interface Model extends Iterable<Double>{
 
-    public void register(View v);
+	/**
+     * Register a view that should be notified about changes in the model.
+     * 
+     * @param v The view to register.
+     */
+	public void register(View v);
     
     /**
      * Remove a view from the set of registered views.
