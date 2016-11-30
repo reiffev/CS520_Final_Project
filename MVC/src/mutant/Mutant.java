@@ -1,7 +1,7 @@
 package mutant;
 
 public interface Mutant {
-	
+	//Variables
 	/**
 	 * @variable 
 	 */
@@ -13,17 +13,30 @@ public interface Mutant {
 	String mutant = "";
 	
 	/**
+	 * @variable 
+	 */
+	String original = "";
+	
+	/**
 	 * 
 	 * @return
 	 */
 	public boolean isKilled();
 	
+	//Methods
 	/**
 	 * @param mutants
 	 * 
 	 * @return void
 	 */
 	public void addMutant(String mutant);
+	
+	/**
+	 * 
+	 * @return void
+	 */
+	
+	public void addOriginal(String orig);
 	
 	/**
 	 * 
