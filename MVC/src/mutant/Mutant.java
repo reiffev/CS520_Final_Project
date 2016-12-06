@@ -19,7 +19,7 @@ public interface Mutant {
 	
 	/**
 	 * 
-	 * @return
+	 * @return boolean
 	 */
 	public boolean isKilled();
 	
@@ -32,6 +32,7 @@ public interface Mutant {
 	public void addMutant(String mutant);
 	
 	/**
+	 * @param orig
 	 * 
 	 * @return void
 	 */
