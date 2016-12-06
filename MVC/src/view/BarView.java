@@ -13,7 +13,7 @@ public class BarView implements View{
 	
 	public JPanel getView(){
 		JPanel bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		bar.setSize(400, 100);
+		bar.setSize(400, 30);
 		bar.setBorder(BorderFactory.createLineBorder(Color.black));
 		bar.add(new JLabel("Live/Killed"));
 		bar.setVisible(true);
