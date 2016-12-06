@@ -11,8 +11,9 @@ public class Main {
     	JFrame frame = new JFrame("Mutant Viewer");
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setSize(400,400);
-    	Container c = frame.getContentPane();
-    	c.setBackground(Color.red);
+    	BarView bar = new BarView();
+    	//frame.add(bar.getView(), BorderLayout.NORTH);
+    	frame.getContentPane().add(bar.getView(), BorderLayout.NORTH);
     	frame.setLocationRelativeTo(null);
     	frame.setResizable(false);
     	frame.setVisible(true);
