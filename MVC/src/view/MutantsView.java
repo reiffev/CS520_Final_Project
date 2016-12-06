@@ -2,7 +2,7 @@ package view;
 
 import java.util.Collection;
 
-public class MutantsKilledView implements View{
+public class MutantsView implements View{
 
 	@Override
 	public void update(Collection<Double> data) {
