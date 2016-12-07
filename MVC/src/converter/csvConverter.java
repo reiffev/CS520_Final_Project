@@ -15,14 +15,19 @@ public class csvConverter implements Converter{
 	/*
 	*
 	*/
-	public String[] getMutantCode(){
-		return null;
+	public String getMutantCode(int number) throws IOException{
+		String moo = "";
+		buf = new BufferedReader(new FileReader(file+"/mutation_results/mutants/"+number+"/triangle/Triangle.java"));
+		while(buf.ready()){
+			moo += buf.readLine();
+		}
+		return moo;
 	}
 
 	/*
 	*
 	*/
-	public String[] getOriginalCode(){
+	public String getOriginalCode() throws IOException{
 		return null;
 	}
 

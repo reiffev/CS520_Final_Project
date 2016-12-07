@@ -20,12 +20,12 @@ public interface Converter {
 	/**
 	*
 	*/
-	public String[] getMutantCode();
+	public String getMutantCode(int number) throws IOException;
 
 	/**
 	*
 	*/
-	public String[] getOriginalCode();
+	public String getOriginalCode() throws IOException;
 
 	/** 
 	 * @throws IOException 
