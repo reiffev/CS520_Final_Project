@@ -9,12 +9,13 @@ import converter.*;
 public class TriangleMutantReader implements Reader{
 	
 	Converter conv;
-
-	public TriangleMutantReader(String type, String file){
+	//Constructor takes in the converter type and file path
+	public TriangleMutantReader(String type){
 		//will eventually change based on the type
-		Converter conv = new csvConverter(file);
+		conv = new csvConverter(System.getProperty("user.dir"));
+		
 	}
-
+	//Will return an array of mutants or null
 	public Mutant[] getResults(){
 		String[] info;
 		try {
