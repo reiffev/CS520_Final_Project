@@ -1,6 +1,9 @@
-package coverter;
+package converter;
 
-public csvCoverter extends Coverter{
+import java.io.*;
+import java.util.*;
+
+public class csvConverter implements Converter{
 	
 	private String file;
 
@@ -13,21 +16,21 @@ public csvCoverter extends Coverter{
 	*
 	*/
 	public String[] getMutantCode(){
-
+		return null;
 	}
 
 	/*
 	*
 	*/
 	public String[] getOriginalCode(){
-
+		return null;
 	}
 
 	/*
 	*
 	*/
-	public boolean[] getKillInfo(){
-		List<boolean> killInfo = new List();
+	public String[] getKillInfo() throws IOException{
+		List<Boolean> killInfo = new ArrayList<Boolean>();
 		buf = new BufferedReader(new FileReader(file+"/mutation_results/killed.csv"));
 		buf.readLine();
 		while(buf.ready()){
@@ -35,6 +38,6 @@ public csvCoverter extends Coverter{
 			String [] info = line.split(",");
 			killInfo.add(info[1].equals("FAIL"));
 		}
-		return killInfo.toArray();
+		return (String[]) (killInfo.toArray());
 	}
 }

@@ -1,9 +1,12 @@
 package reader;
-import mutant;
-import Converter;
+import mutant.*;
+
+import java.io.IOException;
+
+import converter.*;
 
 
-public TriangleMutantReader extends Reader{
+public class TriangleMutantReader implements Reader{
 	
 	Converter conv;
 
@@ -13,11 +16,18 @@ public TriangleMutantReader extends Reader{
 	}
 
 	public Mutant[] getResults(){
-		boolean[] info = conv.getKillInfo();
-		Mutant[] cow_ants = new Mutant[info.length];
-		for(int j = 0; j < cow_ants.length; j++){
-			cow_ants[j].setKilled(inf[j]);
+		String[] info;
+		try {
+			info = conv.getKillInfo();
+			Mutant[] cow_ants = new Mutant[info.length];
+			for(int j = 0; j < cow_ants.length; j++){
+				cow_ants[j].setKilled(info[j].equals("FAIL"));
+			}
+			return cow_ants;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
 		}
-		return cow_ants;
 	}
 }

@@ -24,7 +24,7 @@ public class caseMutant implements Mutant{
 	 * @return boolean
 	 */
 	public boolean isKilled(){
-
+		return this.killed;
 	}
 	
 	//Methods

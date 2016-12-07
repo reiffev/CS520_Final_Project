@@ -1,16 +1,19 @@
 package converter;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public interface Converter {
 
 	/*
 	*
 	*/
-	private String file;
+	String file = "";
 
 	/*
 	*
 	*/
-	private BufferedReader buf;
+	BufferedReader buf = null;
 
 	//Combine these next two methods?
 
@@ -24,9 +27,10 @@ public interface Converter {
 	*/
 	public String[] getOriginalCode();
 
-	/**
+	/** 
+	 * @throws IOException 
 	*
 	*/
-	public boolean[] getKillInfo();
+	public String[] getKillInfo() throws IOException;
 
 }
