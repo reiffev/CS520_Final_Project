@@ -12,29 +12,29 @@ public csvCoverter extends Coverter{
 	/*
 	*
 	*/
-	public List<String> getMutantCode(){
+	public String[] getMutantCode(){
 
 	}
 
 	/*
 	*
 	*/
-	public List<String> getOriginalCode(){
+	public String[] getOriginalCode(){
 
 	}
 
 	/*
 	*
 	*/
-	public List<boolean> getKillInfo(){
+	public boolean[] getKillInfo(){
 		List<boolean> killInfo = new List();
 		buf = new BufferedReader(new FileReader(file));
 		buf.readLine();
 		while(buf.ready()){
 			String line = buf.readLine();
 			String [] info = line.split(",");
-
-
+			killInfo.add(info[1].equals("FAIL"));
 		}
+		return killInfo.toArray();
 	}
 }
