@@ -28,7 +28,7 @@ public csvCoverter extends Coverter{
 	*/
 	public boolean[] getKillInfo(){
 		List<boolean> killInfo = new List();
-		buf = new BufferedReader(new FileReader(file));
+		buf = new BufferedReader(new FileReader(file+"/mutation_results/killed.csv"));
 		buf.readLine();
 		while(buf.ready()){
 			String line = buf.readLine();
