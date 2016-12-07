@@ -10,20 +10,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class BarView implements View{
-	
-	public JPanel getView(){
+
+	@Override
+	public void update(Collection<Double> data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public JPanel getView() {
 		JPanel bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		bar.setSize(400, 30);
 		bar.setBorder(BorderFactory.createLineBorder(Color.black));
 		bar.add(new JLabel("Live/Killed"));
 		bar.setVisible(true);
 		return bar;
-	}
-
-	@Override
-	public void update(Collection<Double> data) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

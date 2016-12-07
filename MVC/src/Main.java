@@ -12,12 +12,14 @@ public class Main {
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setSize(400,400);
     	frame.getContentPane().setLayout(null);
-    	BarView bar = new BarView();
+    	View bar = new BarView();
     	frame.add(bar.getView());
-    	OriginalCodeView ocv = new OriginalCodeView();
+    	View ocv = new OriginalCodeView();
     	frame.add(ocv.getView());
-    	MutantCodeView mcv = new MutantCodeView();
+    	View mcv = new MutantCodeView();
     	frame.add(mcv.getView());
+    	View mutantView = new MutantsView();
+    	frame.add(mutantView.getView());
     	frame.setLocationRelativeTo(null);
     	frame.setResizable(false);
     	frame.setVisible(true);

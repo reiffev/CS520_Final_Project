@@ -9,7 +9,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class OriginalCodeView implements View{
+
+	@Override
+	public void update(Collection<Double> data) {
+		// TODO Auto-generated method stub
+		
+	}
 	
+	@Override
 	public JPanel getView(){
 		JPanel ocv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		ocv.setSize(250, 175);
@@ -18,12 +25,6 @@ public class OriginalCodeView implements View{
 		ocv.add(new JLabel("Original Code"));
 		ocv.setVisible(true);
 		return ocv;
-	}
-
-	@Override
-	public void update(Collection<Double> data) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

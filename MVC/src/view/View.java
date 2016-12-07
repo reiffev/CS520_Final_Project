@@ -2,6 +2,8 @@ package view;
 
 import java.util.*;
 
+import javax.swing.JPanel;
+
 public interface View {
 	
 	/**
@@ -9,4 +11,6 @@ public interface View {
 	 * @param data
 	 */
     public void update(Collection<Double> data);
+    
+    public JPanel getView();
 }

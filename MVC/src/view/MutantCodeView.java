@@ -10,6 +10,13 @@ import javax.swing.JPanel;
 
 public class MutantCodeView implements View{
 	
+	@Override
+	public void update(Collection<Double> data) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
 	public JPanel getView(){
 		JPanel mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mcv.setSize(250, 175);
@@ -18,12 +25,6 @@ public class MutantCodeView implements View{
 		mcv.add(new JLabel("Mutant Code"));
 		mcv.setVisible(true);
 		return mcv;
-	}
-
-	@Override
-	public void update(Collection<Double> data) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
