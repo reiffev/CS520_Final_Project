@@ -31,6 +31,6 @@ public interface Converter {
 	 * @throws IOException 
 	*
 	*/
-	public String[] getKillInfo() throws IOException;
+	public boolean[] getKillInfo() throws IOException;
 
 }

@@ -4,6 +4,7 @@ import controller.*;
 import mutant.*;
 import javax.swing.*;
 import java.awt.*;
+import reader.TriangleMutantReader;
 
 public class Main {
 
@@ -23,5 +24,9 @@ public class Main {
     	frame.setLocationRelativeTo(null);
     	frame.setResizable(false);
     	frame.setVisible(true);
+    	TriangleMutantReader red = new TriangleMutantReader("this");
+    	caseMutant[] mutants = red.getResults();
+    	System.out.print(mutants[0].isKilled());
+    	
     }
 }

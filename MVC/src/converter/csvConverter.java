@@ -34,15 +34,19 @@ public class csvConverter implements Converter{
 	/*
 	*
 	*/
-	public String[] getKillInfo() throws IOException{
-		List<Boolean> killInfo = new ArrayList<Boolean>();
+	public boolean[] getKillInfo() throws IOException{
+		List<String> killInfo = new ArrayList<String>();
 		buf = new BufferedReader(new FileReader(file+"/mutation_results/killed.csv"));
 		buf.readLine();
 		while(buf.ready()){
 			String line = buf.readLine();
 			String [] info = line.split(",");
-			killInfo.add(info[1].equals("FAIL"));
+			killInfo.add(info[1]);
 		}
-		return (String[]) (killInfo.toArray());
+		boolean[] kil = new boolean[killInfo.size()];
+		for(int j=0; j<killInfo.size(); j++){
+			kil[j] = killInfo.get(j).equals("FAIL");
+		}
+		return kil;
 	}
 }

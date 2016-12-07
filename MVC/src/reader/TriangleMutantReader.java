@@ -16,17 +16,18 @@ public class TriangleMutantReader implements Reader{
 		
 	}
 	//Will return an array of mutants or null
-	public Mutant[] getResults(){
-		String[] info;
+	public caseMutant[] getResults(){
+		boolean[] info;
 		try {
 			info = conv.getKillInfo();
-			Mutant[] cow_ants = new Mutant[info.length];
+			caseMutant[] cow_ants = new caseMutant[info.length];
 			for(int j = 0; j < cow_ants.length; j++){
-				cow_ants[j].setKilled(info[j].equals("FAIL"));
+				cow_ants[j] = new caseMutant();
+				cow_ants[j].setKilled(info[j]);
 			}
 			return cow_ants;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 			return null;
 		}

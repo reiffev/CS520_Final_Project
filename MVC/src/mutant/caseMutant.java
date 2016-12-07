@@ -61,6 +61,6 @@ public class caseMutant implements Mutant{
 	 * @return void
 	 */
 	public void setKilled(boolean status){
-
+		this.killed = status;
 	}
 }
