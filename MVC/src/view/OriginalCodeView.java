@@ -12,7 +12,7 @@ public class OriginalCodeView implements View{
 	
 	public JPanel getView(){
 		JPanel ocv = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		ocv.setSize(250, 160);
+		ocv.setSize(250, 175);
 		ocv.setLocation(150, 30);
 		ocv.setBorder(BorderFactory.createLineBorder(Color.black));
 		ocv.add(new JLabel("Original Code"));

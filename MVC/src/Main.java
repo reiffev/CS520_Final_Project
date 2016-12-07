@@ -16,6 +16,8 @@ public class Main {
     	frame.add(bar.getView());
     	OriginalCodeView ocv = new OriginalCodeView();
     	frame.add(ocv.getView());
+    	MutantCodeView mcv = new MutantCodeView();
+    	frame.add(mcv.getView());
     	frame.setLocationRelativeTo(null);
     	frame.setResizable(false);
     	frame.setVisible(true);
