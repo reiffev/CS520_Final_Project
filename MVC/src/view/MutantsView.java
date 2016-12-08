@@ -18,20 +18,20 @@ public class MutantsView implements View{
 		
 	}
 	
-	public JPanel getView(){
+	public JScrollPane getView(){
 		JPanel panel = new JPanel();
 		JPanel content = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		content.setSize(150, 300);
+		content.setSize(150, 650);
 		content.setLocation(0, 30);
-		content.add(new JLabel("Mutant"));
+		content.add(new JLabel("Mutants"));
 		//content.add(scrollView);
 		content.setVisible(true);
 		JScrollPane scrollView = new JScrollPane(content);
 		scrollView.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollView.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollView.setBounds(0, 30, 150, 300);
-		panel.add(scrollView);
-		return content; 
+		scrollView.setBounds(0, 30, 150, 400);
+		//panel.add(scrollView);
+		return scrollView; 
 	}
 
 }
