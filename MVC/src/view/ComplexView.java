@@ -1,21 +1,27 @@
 package view;
 
 import java.util.Collection;
-
+import java.util.ArrayList;
 import javax.swing.JFrame;
-
 import mutant.Mutant;
 
-public class ComplexView implements View{
+public class ComplexView implements View {
+
+	private List<View> views = new ArrayList<View>();
 
 	@Override
 	public void update(Collection<Mutant> data) {
-		// TODO Auto-generated method stub
-		
+		for(View v: views) {
+			v.update(data);
+		}
 	}
 	
-	public JFrame getFrame() {
-		return null;
+	public void addView(View v) {
+		views.add(v);
+	}
+
+	public void removeView(View v) {
+		views.add(v);	
 	}
 
 }
