@@ -8,10 +8,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import mutant.Mutant;
+
 public class MutantCodeView implements View{
 	
 	@Override
-	public void update(Collection<Double> data) {
+	public void update(Collection<Mutant> data) {
 		// TODO Auto-generated method stub
 		
 	}
