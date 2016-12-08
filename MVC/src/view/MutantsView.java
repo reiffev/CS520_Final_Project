@@ -11,15 +11,22 @@ import javax.swing.JScrollPane;
 import mutant.Mutant;
 
 public class MutantsView implements View{
-
+	
+	private JPanel mutantPanel;
+	
+	private JScrollPane mutantScroll;
+	
+	public MutantsView(){
+		
+	}
+	
 	@Override
 	public void update(Collection<Mutant> data) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public JScrollPane getView(){
-		JPanel panel = new JPanel();
+	public void createView(){
 		JPanel content = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		content.setSize(150, 650);
 		content.setLocation(0, 30);
@@ -30,8 +37,12 @@ public class MutantsView implements View{
 		scrollView.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollView.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollView.setBounds(0, 30, 150, 400);
-		//panel.add(scrollView);
-		return scrollView; 
+		mutantPanel = content;
+		mutantScroll = scrollView; 
+	}
+	
+	public JScrollPane getView(){
+		return mutantScroll;
 	}
 
 }
