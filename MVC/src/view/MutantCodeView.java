@@ -16,8 +16,7 @@ public class MutantCodeView implements View{
 		
 	}
 	
-	@Override
-	public JPanel getView(){
+	public JPanel getPanel(){
 		JPanel mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mcv.setSize(250, 175);
 		mcv.setLocation(150, 205);

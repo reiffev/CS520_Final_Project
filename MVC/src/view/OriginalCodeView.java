@@ -16,8 +16,7 @@ public class OriginalCodeView implements View{
 		
 	}
 	
-	@Override
-	public JPanel getView(){
+	public JPanel getPanel(){
 		JPanel ocv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		ocv.setSize(250, 175);
 		ocv.setLocation(150, 30);

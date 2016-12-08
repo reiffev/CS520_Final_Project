@@ -17,8 +17,7 @@ public class BarView implements View{
 		
 	}
 
-	@Override
-	public JPanel getView() {
+	public JPanel getPanel() {
 		JPanel bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		bar.setSize(400, 30);
 		bar.setBorder(BorderFactory.createLineBorder(Color.black));
