@@ -16,7 +16,7 @@ public class MutantsView implements View{
 		
 	}
 	
-	public JPanel getPanel(){
+	public JPanel getView(){
 		JPanel panel = new JPanel();
 		JPanel content = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		content.setSize(150, 300);
