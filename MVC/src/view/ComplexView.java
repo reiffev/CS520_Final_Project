@@ -1,8 +1,8 @@
 package view;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.ArrayList;
-import javax.swing.JFrame;
 import mutant.Mutant;
 
 public class ComplexView implements View {
