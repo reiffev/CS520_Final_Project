@@ -17,7 +17,7 @@ public class MutantsView implements View{
 	private JScrollPane mutantScroll;
 	
 	public MutantsView(){
-		
+		createView();
 	}
 	
 	@Override
@@ -26,7 +26,7 @@ public class MutantsView implements View{
 		
 	}
 	
-	public void createView(){
+	private void createView(){
 		JPanel content = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		content.setSize(150, 650);
 		content.setLocation(0, 30);
