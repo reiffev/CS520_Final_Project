@@ -13,7 +13,7 @@ public class ComplexView implements View{
 	}
 	
 	public JFrame getFrame() {
-		
+		return null;
 	}
 
 }

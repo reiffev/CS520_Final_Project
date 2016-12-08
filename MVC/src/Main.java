@@ -20,7 +20,7 @@ public class Main {
     	MutantCodeView mcv = new MutantCodeView();
     	frame.add(mcv.getPanel());
     	MutantsView mutantView = new MutantsView();
-    	frame.add(mutantView.getPanel());
+    	frame.add(mutantView.getView());
     	frame.setLocationRelativeTo(null);
     	frame.setResizable(false);
     	frame.setVisible(true);
