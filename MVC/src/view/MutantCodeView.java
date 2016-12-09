@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.util.Collection;
@@ -10,12 +11,15 @@ import javax.swing.JPanel;
 
 import mutant.Mutant;
 
-public class MutantCodeView implements View{
+public class MutantCodeView extends ViewComponent{
 	
-	private JPanel mcv;
+	protected JPanel mcv;
 	
 	public MutantCodeView(){
-		createView();
+		mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		mcv.setSize(250, 175);
+		mcv.setLocation(150, 205);
+		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 	}
 	
 	@Override
@@ -24,18 +28,14 @@ public class MutantCodeView implements View{
 		
 	}
 	
-	private void createView(){
-		mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		mcv.setSize(250, 175);
-		mcv.setLocation(150, 205);
-		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
-		mcv.add(new JLabel("Mutant Code"));
-		mcv.setVisible(true);
-	}
 
 	@Override
-	public JPanel getView() {
-		return mcv;
+	public void draw() {
+		container.add(mcv, BorderLayout.CENTER);
+		drawComponents();
+		
 	}
+
+
 
 }

@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.util.Collection;
@@ -10,13 +11,21 @@ import javax.swing.JScrollPane;
 
 import mutant.Mutant;
 
-public class MutantsView implements View{
+public class MutantsView extends ViewComponent{
 	
-	private JPanel mutantPane;
+	protected JScrollPane mutantPane;
 	private JPanel innerPanel;
 	
 	public MutantsView(){
-		createView();
+		innerPanel =  new JPanel(new FlowLayout(FlowLayout.CENTER));
+		innerPanel.setSize(150, 650);
+		innerPanel.setLocation(0, 30);
+		
+		mutantPane = new JScrollPane(innerPanel);
+		mutantPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		mutantPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		mutantPane.setBounds(0, 30, 150, 400);
+		mutantPane.add(new JLabel("Mutants"));
 	}
 	
 	@Override
@@ -24,28 +33,15 @@ public class MutantsView implements View{
 		// TODO Auto-generated method stub
 		
 	}
-	
-	private void createView(){
-		JPanel panel = new JPanel();
-		JPanel content = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		content.setSize(150, 650);
-		content.setLocation(0, 30);
-		//content.add(new JLabel("Mutants"));
-		//content.add(scrollView);
-		content.setVisible(true);
-		JScrollPane scrollView = new JScrollPane(content);
-		scrollView.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollView.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollView.setBounds(0, 30, 150, 400);
-		panel.add(new JLabel("Mutants"));
-		panel.add(scrollView);
-		panel.setVisible(true);
-		mutantPane = panel;
-		innerPanel = content; 
+
+	@Override
+	public void draw() {
+		container.add(innerPanel, BorderLayout.CENTER);
+		drawComponents();
+		
 	}
 	
-	public JPanel getView(){
-		return mutantPane;
-	}
+
+	
 
 }

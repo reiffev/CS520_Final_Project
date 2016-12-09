@@ -9,24 +9,16 @@ import reader.TriangleMutantReader;
 public class Main {
 
     public static void main(String ... args) {
-    	JFrame frame = new JFrame("Mutant Viewer");
-    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	frame.setSize(400,400);
-    	frame.getContentPane().setLayout(null);
-    	ComplexView programView = new ComplexView();
+    	ComplexView main = new ComplexView();
     	BarView bar = new BarView();
-    	programView.addView(bar);
-    	frame.add(bar.getPanel());
+    	main.addView(bar);
     	OriginalCodeView ocv = new OriginalCodeView();
-    	programView.addView(ocv);
+    	main.addView(ocv);
     	MutantCodeView mcv = new MutantCodeView();
-    	programView.addView(mcv);
+    	main.addView(mcv);
     	MutantsView mutantView = new MutantsView();
-    	programView.addView(mutantView);
-    	frame.add(programView.getView());
-    	frame.setLocationRelativeTo(null);
-    	frame.setResizable(false);
-    	frame.setVisible(true);
+    	main.addView(mutantView);
+    	main.draw();
     	TriangleMutantReader red = new TriangleMutantReader("this");
     	caseMutant[] mutants = red.getResults();
     	System.out.print(mutants[0].isKilled());

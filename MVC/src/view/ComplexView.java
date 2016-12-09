@@ -3,35 +3,41 @@ package view;
 import java.util.Collection;
 import java.util.List;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import java.util.ArrayList;
 import mutant.Mutant;
 
-public class ComplexView implements View {
-	private JPanel panel;
+public class ComplexView extends ViewComponent {
 	
-	private List<View> views = new ArrayList<View>();
+	private JFrame plexView;
+	
+	public ComplexView(){
+		plexView = new JFrame("Mutant Summary");
+		super.container = plexView.getContentPane();
+	}
 
 	@Override
 	public void update(Collection<Mutant> data) {
-		for(View v: views) {
-			v.update(data);
-		}
-	}
-	
-	public void addView(View v) {
-		views.add(v);
-		panel.add(v.getView());
+		// not used
 		
 	}
 
-	public void removeView(View v) {
-		views.add(v);	
+	@Override
+	public void addView(ViewComponent component){
+		component.container = this.container;
+		super.addView(component);
+	}
+
+	@Override
+	public void draw() {  
+        plexView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        plexView.setSize(400,400);
+        drawComponents();
+        plexView.setVisible(true);
+		
 	}
 	
-	public JPanel getView(){
-		return panel;
-	}
+	
 
 }

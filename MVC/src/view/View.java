@@ -14,5 +14,4 @@ public interface View {
 	 */
     public void update(Collection<Mutant> data);
     
-    public JPanel getView();
 }

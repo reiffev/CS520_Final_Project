@@ -1,6 +1,7 @@
 package view;
 
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.util.Collection;
@@ -11,12 +12,15 @@ import javax.swing.JPanel;
 
 import mutant.Mutant;
 
-public class BarView implements View{
+public class BarView extends ViewComponent{
 	
 	private JPanel bar;
 	
 	public BarView(){
-		createView();
+		bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		bar.setSize(400, 30);
+		bar.setBorder(BorderFactory.createLineBorder(Color.black));
+		bar.add(new JLabel("Live/Killed"));
 	}
 
 	@Override
@@ -25,18 +29,12 @@ public class BarView implements View{
 		
 	}
 
-	private void createView() {
-		bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		bar.setSize(400, 30);
-		bar.setBorder(BorderFactory.createLineBorder(Color.black));
-		bar.add(new JLabel("Live/Killed"));
-		bar.setVisible(true);
+	@Override
+	public void draw() {
+		container.add(bar, BorderLayout.CENTER);
+		drawComponents();
+		
 	}
 
-	@Override
-	public JPanel getView() {
-		// TODO Auto-generated method stub
-		return bar;
-	}
 
 }

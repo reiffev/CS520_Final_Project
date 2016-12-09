@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.util.Collection;
@@ -10,12 +11,17 @@ import javax.swing.JPanel;
 
 import mutant.Mutant;
 
-public class OriginalCodeView implements View{
+public class OriginalCodeView extends ViewComponent{
 	
-	private JPanel OGCodePanel;
+	protected JPanel OGCodePanel;
 	
 	public OriginalCodeView(){
-		createView();
+		OGCodePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		OGCodePanel.setSize(250, 175);
+		OGCodePanel.setLocation(150, 30);
+		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		OGCodePanel.add(new JLabel("Original Code"));
+		
 	}
 	@Override
 	public void update(Collection<Mutant> data) {
@@ -23,18 +29,12 @@ public class OriginalCodeView implements View{
 		
 	}
 	
-	private void createView(){
-		JPanel ocv = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		ocv.setSize(250, 175);
-		ocv.setLocation(150, 30);
-		ocv.setBorder(BorderFactory.createLineBorder(Color.black));
-		ocv.add(new JLabel("Original Code"));
-		ocv.setVisible(true);
-		OGCodePanel = ocv;
+	@Override
+	public void draw() {
+		container.add(OGCodePanel, BorderLayout.CENTER);
+		drawComponents();
 	}
 	
-	public JPanel getView(){
-		return OGCodePanel;
-	}
+	
 
 }
