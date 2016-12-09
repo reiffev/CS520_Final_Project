@@ -12,9 +12,8 @@ import mutant.Mutant;
 
 public class MutantsView implements View{
 	
-	private JPanel mutantPanel;
-	
-	private JScrollPane mutantScroll;
+	private JPanel mutantPane;
+	private JPanel innerPanel;
 	
 	public MutantsView(){
 		createView();
@@ -27,22 +26,26 @@ public class MutantsView implements View{
 	}
 	
 	private void createView(){
+		JPanel panel = new JPanel();
 		JPanel content = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		content.setSize(150, 650);
 		content.setLocation(0, 30);
-		content.add(new JLabel("Mutants"));
+		//content.add(new JLabel("Mutants"));
 		//content.add(scrollView);
 		content.setVisible(true);
 		JScrollPane scrollView = new JScrollPane(content);
 		scrollView.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scrollView.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollView.setBounds(0, 30, 150, 400);
-		mutantPanel = content;
-		mutantScroll = scrollView; 
+		panel.add(new JLabel("Mutants"));
+		panel.add(scrollView);
+		panel.setVisible(true);
+		mutantPane = panel;
+		innerPanel = content; 
 	}
 	
-	public JScrollPane getView(){
-		return mutantScroll;
+	public JPanel getView(){
+		return mutantPane;
 	}
 
 }
