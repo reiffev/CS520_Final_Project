@@ -12,19 +12,29 @@ import mutant.Mutant;
 
 public class MutantCodeView implements View{
 	
+	private JPanel mcv;
+	
+	public MutantCodeView(){
+		createView();
+	}
+	
 	@Override
 	public void update(Collection<Mutant> data) {
 		// TODO Auto-generated method stub
 		
 	}
 	
-	public JPanel getPanel(){
-		JPanel mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
+	private void createView(){
+		mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mcv.setSize(250, 175);
 		mcv.setLocation(150, 205);
 		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 		mcv.add(new JLabel("Mutant Code"));
 		mcv.setVisible(true);
+	}
+
+	@Override
+	public JPanel getView() {
 		return mcv;
 	}
 
