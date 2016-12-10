@@ -41,6 +41,7 @@ public class ComplexView extends ViewComponent {
         plexView.pack();
         plexView.setLocationRelativeTo(null);
         plexView.setVisible(true);
+        plexView.setResizable(false);
 		
 	}
 	
