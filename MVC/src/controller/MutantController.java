@@ -22,6 +22,8 @@ public class MutantController implements Controller{
 	public void actionPerformed(ActionEvent e) {
     	try {
             //do something with the registered model
+    		System.out.println("hello "+ e.getSource());
+    		
     	} catch (Exception exception){
     		//System.out.println(exception.);
     		exception.printStackTrace();

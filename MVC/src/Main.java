@@ -14,7 +14,7 @@ public class Main {
     	Model mutant_model = new MutantModel();
     	
     //Controllers
-    	Controller controller = new MutantController();
+    	MutantController controller = new MutantController();
     	controller.setModel(mutant_model);
     	
     //Create the view
@@ -28,6 +28,7 @@ public class Main {
     	MutantCodeView mcv = new MutantCodeView();
     	main.addView(mcv);
     	
+    	mutantView.connectMutantController(controller);
     	
     	mutant_model.register(bar);
     	mutant_model.register(mutantView);

@@ -11,16 +11,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import controller.MutantController;
 import mutant.Mutant;
 
 public class MutantsView extends ViewComponent{
 	
+	protected MutantController mutant_controller;
 	protected JScrollPane mutantPane;
 	private JPanel innerPanel;
 	
 	public MutantsView(){
 		innerPanel =  new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mutantPane = new JScrollPane(innerPanel);
+	}
+	
+	public void connectMutantController(MutantController m){
+		mutant_controller = m;
 	}
 	
 	@Override
@@ -36,8 +42,8 @@ public class MutantsView extends ViewComponent{
 		innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
 		for(int i = 0; i < 150; i++){
 			JButton temp = new JButton("Mutant " + i);
-			//temp.setLocation(0, 10+(10*i));
 			temp.setPreferredSize(new Dimension(30,20));
+			temp.addActionListener(mutant_controller);
 			innerPanel.add(temp);
 		}
 		
