@@ -1,8 +1,9 @@
 package model;
 
+import mutant.Mutant;
 import view.View;
 
-public interface Model extends Iterable<Double>{
+public interface Model extends Iterable<Mutant>{
 
 	/**
      * Register a view that should be notified about changes in the model.

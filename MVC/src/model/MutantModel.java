@@ -1,34 +1,39 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
+import mutant.Mutant;
 import view.View;
 import reader.TriangleMutantReader;
 
 public class MutantModel implements Model{
-
+	
+	private ArrayList<View> views = new ArrayList<View>();
+		
+		// Store all collected numbers
+	private ArrayList<Mutant> mutants = new ArrayList<Mutant>();
+	
 	@Override
-	public Iterator<Double> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterator<Mutant> iterator() {
+		return mutants.iterator();
 	}
 
 	@Override
 	public void register(View v) {
-		// TODO Auto-generated method stub
-		
+		views.add(v);
 	}
 
 	@Override
 	public void unregister(View v) {
-		// TODO Auto-generated method stub
-		
+		views.remove(v);
 	}
 
 	@Override
 	public void changed() {
-		// TODO Auto-generated method stub
-		
+		for (View v : views){
+			v.update(mutants);
+		}
 	}
 
 }
