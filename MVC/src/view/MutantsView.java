@@ -33,16 +33,18 @@ public class MutantsView extends ViewComponent{
 	public void draw() {
 		//innerPanel.setLocation(0, 30);
 		innerPanel.add(new JLabel("Mutants"));
-		for(int i = 0; i < 100; i++){
+		innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
+		for(int i = 0; i < 150; i++){
 			JButton temp = new JButton("Mutant " + i);
-			temp.setLocation(0, 10+(10*i));
+			//temp.setLocation(0, 10+(10*i));
+			temp.setPreferredSize(new Dimension(30,20));
 			innerPanel.add(temp);
 		}
-		innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
+		
 		mutantPane = new JScrollPane(innerPanel);
-		//mutantPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		mutantPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		//mutantPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		mutantPane.setBounds(0, 30, 200, 547);
+		mutantPane.setBounds(0, 30, 200, 350);
 		
 		container.add(mutantPane, BorderLayout.CENTER);
 	}
