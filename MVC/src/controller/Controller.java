@@ -1,8 +1,10 @@
 package controller;
 
+import java.awt.event.ActionListener;
+
 import model.Model;
 
-public interface Controller {
+public interface Controller extends ActionListener{
 	
 	/**
 	 * Set the model for this controller.

@@ -1,19 +1,32 @@
 package controller;
 
+import java.awt.event.ActionEvent;
+
 import model.Model;
 
 public class MutantController implements Controller{
 
+	private Model model;
+	
 	@Override
 	public void setModel(Model m) {
-		// TODO Auto-generated method stub
-		
+		this.model = m;
 	}
 
 	@Override
 	public Model getModel() {
-		// TODO Auto-generated method stub
-		return null;
+		return model;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+    	try {
+            //do something with the registered model
+    	} catch (Exception exception){
+    		//System.out.println(exception.);
+    		exception.printStackTrace();
+    	}
+		
 	}
 
 }

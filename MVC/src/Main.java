@@ -11,9 +11,11 @@ public class Main {
     public static void main(String ... args) {
     
     //Model
-    	MutantModel mutant_model = new MutantModel();
+    	Model mutant_model = new MutantModel();
     	
     //Controllers
+    	Controller controller = new MutantController();
+    	controller.setModel(mutant_model);
     	
     //Create the view
     	ComplexView main = new ComplexView();
@@ -31,7 +33,7 @@ public class Main {
     	mutant_model.register(mutantView);
     	mutant_model.register(ocv);
     	mutant_model.register(mcv);
-    	mutant_model.getMutants();
+    	((MutantModel) mutant_model).getMutants();
     	
     	main.draw();
     	
