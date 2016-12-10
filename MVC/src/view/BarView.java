@@ -18,9 +18,6 @@ public class BarView extends ViewComponent{
 	
 	public BarView(){
 		bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		bar.setSize(400, 30);
-		bar.setBorder(BorderFactory.createLineBorder(Color.black));
-		bar.add(new JLabel("Live/Killed"));
 	}
 
 	@Override
@@ -31,9 +28,11 @@ public class BarView extends ViewComponent{
 
 	@Override
 	public void draw() {
-		container.add(bar, BorderLayout.CENTER);
-		drawComponents();
+		bar.setSize(400, 30);
+		bar.setBorder(BorderFactory.createLineBorder(Color.black));
+		bar.add(new JLabel("Live/Killed"));
 		
+		container.add(bar, BorderLayout.CENTER);
 	}
 
 

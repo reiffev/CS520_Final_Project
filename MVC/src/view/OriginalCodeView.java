@@ -17,10 +17,6 @@ public class OriginalCodeView extends ViewComponent{
 	
 	public OriginalCodeView(){
 		OGCodePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		OGCodePanel.setSize(250, 175);
-		OGCodePanel.setLocation(150, 30);
-		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		OGCodePanel.add(new JLabel("Original Code"));
 		
 	}
 	@Override
@@ -31,8 +27,12 @@ public class OriginalCodeView extends ViewComponent{
 	
 	@Override
 	public void draw() {
+		OGCodePanel.setSize(250, 175);
+		OGCodePanel.setLocation(150, 30);
+		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		OGCodePanel.add(new JLabel("Original Code"));
+		
 		container.add(OGCodePanel, BorderLayout.CENTER);
-		drawComponents();
 	}
 	
 	

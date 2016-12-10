@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.*;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import mutant.Mutant;
 
@@ -30,10 +31,13 @@ public class ComplexView extends ViewComponent {
 	}
 
 	@Override
-	public void draw() {  
+	public void draw() {
+		plexView.setPreferredSize(new Dimension(400, 400));
+		plexView.setResizable(false);
         plexView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         plexView.setSize(400,400);
         drawComponents();
+        plexView.pack();
         plexView.setVisible(true);
 		
 	}
