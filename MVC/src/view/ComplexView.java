@@ -33,11 +33,13 @@ public class ComplexView extends ViewComponent {
 	@Override
 	public void draw() {
 		plexView.setPreferredSize(new Dimension(400, 400));
-		plexView.setResizable(false);
+		//plexView.setResizable(false);
+		plexView.setLayout(null);
         plexView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        plexView.setSize(400,400);
+        plexView.setPreferredSize(new Dimension(600,402));
         drawComponents();
         plexView.pack();
+        plexView.setLocationRelativeTo(null);
         plexView.setVisible(true);
 		
 	}

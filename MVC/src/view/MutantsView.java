@@ -18,14 +18,7 @@ public class MutantsView extends ViewComponent{
 	
 	public MutantsView(){
 		innerPanel =  new JPanel(new FlowLayout(FlowLayout.CENTER));
-		innerPanel.setSize(150, 650);
-		innerPanel.setLocation(0, 30);
-		
 		mutantPane = new JScrollPane(innerPanel);
-		mutantPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		mutantPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		mutantPane.setBounds(0, 30, 150, 400);
-		mutantPane.add(new JLabel("Mutants"));
 	}
 	
 	@Override
@@ -36,13 +29,12 @@ public class MutantsView extends ViewComponent{
 
 	@Override
 	public void draw() {
-		innerPanel.setSize(150, 650);
-		innerPanel.setLocation(0, 30);
+		//innerPanel.setLocation(0, 30);
 		innerPanel.add(new JLabel("Mutants"));
 		mutantPane = new JScrollPane(innerPanel);
 		mutantPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		mutantPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		mutantPane.setBounds(0, 30, 150, 400);
+		mutantPane.setBounds(0, 30, 200, 547);
 		
 		container.add(mutantPane, BorderLayout.CENTER);
 	}

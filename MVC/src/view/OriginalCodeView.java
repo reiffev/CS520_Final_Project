@@ -27,8 +27,8 @@ public class OriginalCodeView extends ViewComponent{
 	
 	@Override
 	public void draw() {
-		OGCodePanel.setSize(250, 175);
-		OGCodePanel.setLocation(150, 30);
+		OGCodePanel.setSize(400, 175);
+		OGCodePanel.setLocation(200, 30);
 		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		OGCodePanel.add(new JLabel("Original Code"));
 		

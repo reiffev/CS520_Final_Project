@@ -12,12 +12,12 @@ public class Main {
     	ComplexView main = new ComplexView();
     	BarView bar = new BarView();
     	main.addView(bar);
+    	MutantsView mutantView = new MutantsView();
+    	main.addView(mutantView);
     	OriginalCodeView ocv = new OriginalCodeView();
     	main.addView(ocv);
     	MutantCodeView mcv = new MutantCodeView();
     	main.addView(mcv);
-    	MutantsView mutantView = new MutantsView();
-    	main.addView(mutantView);
     	main.draw();
     	TriangleMutantReader red = new TriangleMutantReader("this");
     	caseMutant[] mutants = red.getResults();

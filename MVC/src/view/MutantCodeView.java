@@ -28,8 +28,8 @@ public class MutantCodeView extends ViewComponent{
 
 	@Override
 	public void draw() {
-		mcv.setSize(250, 175);
-		mcv.setLocation(150, 205);
+		mcv.setSize(400, 175);
+		mcv.setLocation(200, 205);
 		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 		mcv.add(new JLabel("Mutant Code"));
 		

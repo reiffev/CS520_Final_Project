@@ -28,7 +28,7 @@ public class BarView extends ViewComponent{
 
 	@Override
 	public void draw() {
-		bar.setSize(400, 30);
+		bar.setSize(600, 30);
 		bar.setBorder(BorderFactory.createLineBorder(Color.black));
 		bar.add(new JLabel("Live/Killed"));
 		
