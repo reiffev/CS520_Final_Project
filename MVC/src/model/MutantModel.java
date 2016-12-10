@@ -14,6 +14,8 @@ public class MutantModel implements Model{
 		// Store all collected numbers
 	private ArrayList<Mutant> mutants = new ArrayList<Mutant>();
 	
+	TriangleMutantReader reader = new TriangleMutantReader("this");
+	
 	@Override
 	public Iterator<Mutant> iterator() {
 		return mutants.iterator();
@@ -35,5 +37,12 @@ public class MutantModel implements Model{
 			v.update(mutants);
 		}
 	}
+	
+	public void getMutants(){
+		mutants = reader.getResults();
+		this.changed();
+	}
+	
+	
 
 }

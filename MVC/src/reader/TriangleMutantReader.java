@@ -2,6 +2,7 @@ package reader;
 import mutant.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import converter.*;
 
@@ -16,14 +17,14 @@ public class TriangleMutantReader implements Reader{
 		
 	}
 	//Will return an array of mutants or null
-	public caseMutant[] getResults(){
+	public ArrayList<Mutant> getResults(){
 		boolean[] info;
 		try {
 			info = conv.getKillInfo();
-			caseMutant[] cow_ants = new caseMutant[info.length];
-			for(int j = 0; j < cow_ants.length; j++){
-				cow_ants[j] = new caseMutant();
-				cow_ants[j].setKilled(info[j]);
+			ArrayList <Mutant> cow_ants = new ArrayList<Mutant>();
+			for(int j = 0; j < cow_ants.size(); j++){
+				cow_ants.add(new caseMutant());
+				cow_ants.get(j).setKilled(info[j]);
 			}
 			return cow_ants;
 		} catch (IOException e) {
