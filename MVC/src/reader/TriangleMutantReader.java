@@ -22,7 +22,7 @@ public class TriangleMutantReader implements Reader{
 		try {
 			info = conv.getKillInfo();
 			ArrayList <Mutant> cow_ants = new ArrayList<Mutant>();
-			for(int j = 0; j < cow_ants.size(); j++){
+			for(int j = 0; j < info.length; j++){
 				cow_ants.add(new caseMutant());
 				cow_ants.get(j).setKilled(info[j]);
 			}
