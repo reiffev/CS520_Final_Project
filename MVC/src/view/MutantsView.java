@@ -45,11 +45,12 @@ public class MutantsView extends ViewComponent{
 		//innerPanel.add(new JLabel("Mutants"));
 		innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
 		for(int i = 0; i < d.size(); i++){
-			JButton temp = new JButton("Mutant " + i);
+			JButton temp = new JButton("Mutant " + (i+1));
 			if(d.get(i).isKilled())
 				temp.setBackground(Color.GREEN);
 			else
 				temp.setBackground(Color.RED);
+			temp.setName(String.valueOf((i+1)));
 			temp.setOpaque(true);
 			temp.setBorderPainted(false);
 			temp.setPreferredSize(new Dimension(30,20));

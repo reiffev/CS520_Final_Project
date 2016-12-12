@@ -25,6 +25,7 @@ public class TriangleMutantReader implements Reader{
 			for(int j = 0; j < info.length; j++){
 				cow_ants.add(new caseMutant());
 				cow_ants.get(j).setKilled(info[j]);
+				cow_ants.get(j).addMutant(conv.getMutantCode(j));
 			}
 			return cow_ants;
 		} catch (IOException e) {

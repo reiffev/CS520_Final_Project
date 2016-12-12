@@ -17,7 +17,7 @@ public class csvConverter implements Converter{
 	*/
 	public String getMutantCode(int number) throws IOException{
 		String moo = "";
-		buf = new BufferedReader(new FileReader(file+"/mutation_results/mutants/"+number+"/triangle/Triangle.java"));
+		buf = new BufferedReader(new FileReader(file+"/mutation_results/mutants/"+(number+1)+"/triangle/Triangle.java"));
 		while(buf.ready()){
 			moo += buf.readLine();
 		}

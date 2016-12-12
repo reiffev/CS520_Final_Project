@@ -14,6 +14,8 @@ public class MutantModel implements Model{
 		// Store all collected numbers
 	private ArrayList<Mutant> mutants = new ArrayList<Mutant>();
 	
+	private Mutant current;
+	
 	TriangleMutantReader reader = new TriangleMutantReader("this");
 	
 	@Override
