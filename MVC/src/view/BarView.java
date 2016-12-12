@@ -50,6 +50,8 @@ public class BarView extends ViewComponent{
 		bar.add(new JLabel("/"));
 		bar.add(k);
 		
+		bar.setBackground(Color.GRAY);
+		
 		container.add(bar, BorderLayout.CENTER);
 	}
 
