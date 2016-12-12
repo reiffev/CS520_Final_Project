@@ -44,15 +44,23 @@ public class caseMutant implements Mutant{
 	 */
 	
 	public void addOriginal(String orig){
-
+		this.original = orig;
 	}
 	
 	/**
 	 * 
-	 * @return void
+	 * @return String
 	 */
 	public String showMutant(){
 		return mutant;
+	}
+	
+	/**
+	 * 
+	 * @return String
+	 */
+	public String showOriginal() {
+		return original;
 	}
 	
 	/**
@@ -63,4 +71,5 @@ public class caseMutant implements Mutant{
 	public void setKilled(boolean status){
 		this.killed = status;
 	}
+	
 }

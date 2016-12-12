@@ -41,9 +41,15 @@ public interface Mutant {
 	
 	/**
 	 * 
-	 * @return void
+	 * @return String
 	 */
 	public String showMutant();
+	
+	/**
+	 * 
+	 * @return void
+	 */
+	public String showOriginal();
 	
 	/**
 	 * @param status
