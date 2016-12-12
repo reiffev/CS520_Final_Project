@@ -64,7 +64,7 @@ public class MutantsView extends ViewComponent{
 		mutantPane = new JScrollPane(innerPanel);
 		mutantPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		//mutantPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		mutantPane.setBounds(0, 30, 200, 350);
+		mutantPane.setBounds(0, 30, 150, 350);
 		
 		container.add(mutantPane, BorderLayout.CENTER);
 	}
