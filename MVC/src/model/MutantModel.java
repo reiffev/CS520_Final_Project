@@ -48,6 +48,7 @@ public class MutantModel implements Model{
 	
 	public void changeCurrentMutant(int num){
 		current = mutants.get(num);
+		this.changed();
 	}
 
 }

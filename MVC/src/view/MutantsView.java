@@ -53,9 +53,10 @@ public class MutantsView extends ViewComponent{
 				temp.setBackground(Color.RED);
 			temp.setName(String.valueOf((i+1)));
 			temp.setOpaque(true);
-			temp.setBorderPainted(false);
-			temp.setPreferredSize(new Dimension(30,20));
-			temp.setMaximumSize(new Dimension(125,20));
+			//temp.setBorderPainted(true);
+			temp.setPreferredSize(new Dimension(30,25));
+			temp.setMaximumSize(new Dimension(125,25));
+			temp.setBorder(BorderFactory.createEtchedBorder());
 			temp.addActionListener(mutant_controller);
 			innerPanel.add(temp);
 		}
