@@ -19,7 +19,7 @@ public class ComplexView extends ViewComponent {
 	}
 
 	@Override
-	public void update(Collection<Mutant> data) {
+	public void update(Collection<Mutant> data, Mutant current) {
 		// not used
 		
 	}

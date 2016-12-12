@@ -43,7 +43,7 @@ public interface Mutant {
 	 * 
 	 * @return void
 	 */
-	public void showMutant();
+	public String showMutant();
 	
 	/**
 	 * @param status

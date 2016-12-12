@@ -24,7 +24,7 @@ public class BarView extends ViewComponent{
 	}
 
 	@Override
-	public void update(Collection<Mutant> data) {
+	public void update(Collection<Mutant> data, Mutant current) {
 		// TODO Auto-generated method stub
 		d = (ArrayList<Mutant>) data;
 	}
@@ -41,7 +41,14 @@ public class BarView extends ViewComponent{
 			else
 				live++;
 		}
-		bar.add(new JLabel("Live: " + live + "/Killed: " + killed));
+		//bar.add(new JLabel("Live: " + live + "/Killed: " + killed));
+		JLabel l = new JLabel("Live: " + live);
+		l.setForeground(Color.RED);
+		JLabel k = new JLabel("Killed: " + killed);
+		k.setForeground(Color.GREEN);
+		bar.add(l);
+		bar.add(new JLabel("/"));
+		bar.add(k);
 		
 		container.add(bar, BorderLayout.CENTER);
 	}

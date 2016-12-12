@@ -15,14 +15,16 @@ public class MutantCodeView extends ViewComponent{
 	
 	protected JPanel mcv;
 	
+	private Mutant m;
+	
 	public MutantCodeView(){
 		mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	}
 	
 	@Override
-	public void update(Collection<Mutant> data) {
+	public void update(Collection<Mutant> data, Mutant current) {
 		// TODO Auto-generated method stub
-		
+		m = current;
 	}
 	
 
@@ -32,7 +34,7 @@ public class MutantCodeView extends ViewComponent{
 		mcv.setLocation(200, 205);
 		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 		mcv.add(new JLabel("Mutant Code"));
-		
+		mcv.add(new JLabel(m.showMutant()));
 		container.add(mcv, BorderLayout.CENTER);
 	}
 

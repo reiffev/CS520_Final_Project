@@ -34,7 +34,7 @@ public class caseMutant implements Mutant{
 	 * @return void
 	 */
 	public void addMutant(String mutant){
-
+		this.mutant = mutant;
 	}
 	
 	/**
@@ -51,8 +51,8 @@ public class caseMutant implements Mutant{
 	 * 
 	 * @return void
 	 */
-	public void showMutant(){
-
+	public String showMutant(){
+		return mutant;
 	}
 	
 	/**

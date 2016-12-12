@@ -20,7 +20,7 @@ public class OriginalCodeView extends ViewComponent{
 		
 	}
 	@Override
-	public void update(Collection<Mutant> data) {
+	public void update(Collection<Mutant> data, Mutant current) {
 		// TODO Auto-generated method stub
 		
 	}

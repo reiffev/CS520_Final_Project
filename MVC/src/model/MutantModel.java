@@ -36,15 +36,18 @@ public class MutantModel implements Model{
 	@Override
 	public void changed() {
 		for (View v : views){
-			v.update(mutants);
+			v.update(mutants, current);
 		}
 	}
 	
 	public void getMutants(){
 		mutants = reader.getResults();
+		current = mutants.get(0);
 		this.changed();
 	}
 	
-	
+	public void changeCurrentMutant(int num){
+		current = mutants.get(num);
+	}
 
 }
