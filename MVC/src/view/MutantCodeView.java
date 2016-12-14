@@ -26,7 +26,9 @@ public class MutantCodeView extends ViewComponent{
 	@Override
 	public void update(Collection<Mutant> data, Mutant current) {
 		m = current;
-		textArea.setText(current.showMutant());
+		textArea.setText(m.showMutant());
+		textArea.append("Type: "+m.getType()+"\n");
+		textArea.append("Line Number: "+m.getLine()+"\n");
 	}
 	
 
@@ -37,10 +39,12 @@ public class MutantCodeView extends ViewComponent{
 		mcv.setLocation(150, 205);
 		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 		mcv.add(new JLabel("Mutant Code"));
-		textArea = new JTextArea();
+		textArea = new JTextArea(7,20);
 		textArea.setPreferredSize(new Dimension(400,50));
 		textArea.setEditable(false);
 		textArea.setText(m.showOriginal());
+		textArea.append("Type: "+m.getType()+"\n");
+		textArea.append("Line Number: "+m.getLine()+"\n");
 		mcv.add(textArea);
 		container.add(mcv, BorderLayout.CENTER);
 	}
