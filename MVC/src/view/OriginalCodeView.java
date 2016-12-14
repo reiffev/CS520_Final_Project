@@ -15,13 +15,15 @@ public class OriginalCodeView extends ViewComponent{
 	
 	protected JPanel OGCodePanel;
 	
+	private Mutant m;
+	
 	public OriginalCodeView(){
 		OGCodePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		
 	}
 	@Override
 	public void update(Collection<Mutant> data, Mutant current) {
-		// TODO Auto-generated method stub
+		m = current;
 		
 	}
 	
@@ -31,7 +33,7 @@ public class OriginalCodeView extends ViewComponent{
 		OGCodePanel.setLocation(150, 30);
 		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		OGCodePanel.add(new JLabel("Original Code"));
-		
+		OGCodePanel.add(new JLabel(m.showOriginal()));
 		container.add(OGCodePanel, BorderLayout.CENTER);
 	}
 	
