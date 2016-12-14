@@ -19,7 +19,8 @@ public class BarView extends ViewComponent{
 	
 	private ArrayList<Mutant> d;
 	
-	public BarView(){
+	public BarView(ArrayList<Mutant> start){
+		d = start;
 		bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	}
 

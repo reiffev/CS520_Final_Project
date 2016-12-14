@@ -8,33 +8,38 @@ import java.util.Collection;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import mutant.Mutant;
 
 public class MutantCodeView extends ViewComponent{
 	
-	protected JPanel mcv;
+	protected JTextArea textArea;
 	
 	private Mutant m;
 	
-	public MutantCodeView(){
-		mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
+	public MutantCodeView(Mutant start){
+		m = start;
 	}
 	
 	@Override
 	public void update(Collection<Mutant> data, Mutant current) {
-		// TODO Auto-generated method stub
 		m = current;
+		textArea.setText(current.showMutant());
 	}
 	
 
 	@Override
 	public void draw() {
+		JPanel mcv = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mcv.setSize(450, 175);
 		mcv.setLocation(150, 205);
 		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 		mcv.add(new JLabel("Mutant Code"));
-		mcv.add(new JLabel(m.showMutant()));
+		textArea = new JTextArea(5,20);
+		textArea.setEditable(false);
+		textArea.setText(m.showOriginal());
+		mcv.add(textArea);
 		container.add(mcv, BorderLayout.CENTER);
 	}
 

@@ -40,10 +40,10 @@ public class MutantModel implements Model{
 		}
 	}
 	
-	public void getMutants(){
+	public ArrayList<Mutant> getMutants(){
 		mutants = reader.getResults();
 		current = mutants.get(0);
-		this.changed();
+		return mutants;
 	}
 	
 	public void changeCurrentMutant(int num){

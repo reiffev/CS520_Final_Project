@@ -25,7 +25,8 @@ public class MutantsView extends ViewComponent{
 	
 	private ArrayList<Mutant> d;
 	
-	public MutantsView(){
+	public MutantsView(ArrayList<Mutant> start){
+		d = start;
 		innerPanel =  new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mutantPane = new JScrollPane(innerPanel);
 	}
