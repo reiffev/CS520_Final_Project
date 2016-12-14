@@ -20,17 +20,23 @@ public interface Converter {
 	/**
 	*
 	*/
-	public String getMutantCode(int number) throws IOException;
+	public String getMutantCode(int number, int line) throws IOException;
 
 	/**
 	*
 	*/
-	public String getOriginalCode() throws IOException;
+	public String getOriginalCode(int line) throws IOException;
 
 	/** 
 	 * @throws IOException 
 	*
 	*/
 	public boolean[] getKillInfo() throws IOException;
+	
+	/** 
+	 * @throws IOException 
+	*
+	*/
+	public String[] getMutantInfo() throws IOException;
 
 }

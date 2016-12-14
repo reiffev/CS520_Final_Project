@@ -15,11 +15,19 @@ public class csvConverter implements Converter{
 	/*
 	*
 	*/
-	public String getMutantCode(int number) throws IOException{
+	public String getMutantCode(int number, int line) throws IOException{
 		String moo = "";
+		int count = 0;
 		buf = new BufferedReader(new FileReader(file+"//mutation_results/mutants/"+(number+1)+"/triangle/Triangle.java"));
 		while(buf.ready()){
-			moo += buf.readLine();
+			if(count == (line-1) ){
+				for(int j= 0; j<3; j++){
+					moo += buf.readLine()+"\n";
+				}
+				return moo;
+			}
+			buf.readLine();
+			count++;
 		}
 		return moo;
 	}
@@ -27,8 +35,21 @@ public class csvConverter implements Converter{
 	/*
 	*
 	*/
-	public String getOriginalCode() throws IOException{
-		return null;
+	public String getOriginalCode(int line) throws IOException{
+		String moo = "";
+		int count = 0;
+		buf = new BufferedReader(new FileReader(file+"//mutation_results/triangle/Triangle.java"));
+		while(buf.ready()){
+			if(count == line-1){
+				for(int j= 0; j<3; j++){
+					moo += buf.readLine()+"\n";
+				}
+				return moo;
+			}
+			buf.readLine();
+			count++;
+		}
+		return moo;
 	}
 
 	/*
@@ -48,5 +69,35 @@ public class csvConverter implements Converter{
 			kil[j] = killInfo.get(j).equals("FAIL");
 		}
 		return kil;
+	}
+	
+	public String[] getMutantInfo() throws IOException{
+		List<String> mutantInfo = new ArrayList<String>();
+		buf = new BufferedReader(new FileReader(file+"/mutation_results/mutants.log"));
+		while(buf.ready()){
+			String mutant_info = "";
+			String line = buf.readLine();
+			
+			//Getting the typ of mutant
+			int param = line.indexOf(":");
+			String temp = line.substring(param+1, param+4);
+			//add type to the mutant info string
+			mutant_info += temp+",";
+			
+			//Getting the line number of the mutant
+			param = line.indexOf("@classify:");
+			temp = line.substring(param+10);
+			param = temp.indexOf(":");
+			String m_code = temp.substring(0, param);
+			//add number to the mutant info string
+			mutant_info += m_code;
+			//add mutant info to list
+			mutantInfo.add(mutant_info);
+		}
+		String[] inf = new String[mutantInfo.size()];
+		for(int j=0; j<mutantInfo.size(); j++){
+			inf[j] = mutantInfo.get(j);
+		}
+		return inf;
 	}
 }

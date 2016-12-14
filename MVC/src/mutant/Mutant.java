@@ -18,6 +18,16 @@ public interface Mutant {
 	String original = "";
 	
 	/**
+	 * @variable 
+	 */
+	String my_type = "";
+	
+	/**
+	 * @variable 
+	 */
+	int line_number = -1;
+	
+	/**
 	 * 
 	 * @return boolean
 	 */
@@ -57,4 +67,32 @@ public interface Mutant {
 	 * @return void
 	 */
 	public void setKilled(boolean status);
+	
+	/**
+	 * @param type
+	 * 
+	 * @return void
+	 */
+	public void setType(String type);
+	
+	/**
+	 * 
+	 * 
+	 * @return String
+	 */
+	public String getType();
+	
+	/**
+	 * @param line
+	 * 
+	 * @return void
+	 */
+	public void setLine(int line);
+	
+	/**
+	 * 
+	 * 
+	 * @return integer
+	 */
+	public int getLine();
 }

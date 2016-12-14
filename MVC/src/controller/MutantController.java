@@ -28,7 +28,7 @@ public class MutantController implements Controller{
     		//System.out.println("hello "+ e.getSource());
     		JButton temp = (JButton) e.getSource();
     		int n = Integer.parseInt(temp.getName());
-    		System.out.println(n);
+    		//System.out.println(n);
     		((MutantModel) model).changeCurrentMutant(n);
     	} catch (Exception exception){
     		//System.out.println(exception.);

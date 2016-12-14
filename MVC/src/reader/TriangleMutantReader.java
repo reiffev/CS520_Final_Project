@@ -18,14 +18,21 @@ public class TriangleMutantReader implements Reader{
 	}
 	//Will return an array of mutants or null
 	public ArrayList<Mutant> getResults(){
-		boolean[] info;
+		boolean[] k_info;
+		String[] m_info;
 		try {
-			info = conv.getKillInfo();
+			k_info = conv.getKillInfo();
+			m_info = conv.getMutantInfo();
 			ArrayList <Mutant> cow_ants = new ArrayList<Mutant>();
-			for(int j = 0; j < info.length; j++){
-				cow_ants.add(new caseMutant());
-				cow_ants.get(j).setKilled(info[j]);
-				cow_ants.get(j).addMutant(conv.getMutantCode(j));
+			for(int j = 0; j < k_info.length; j++){
+				Mutant m = new caseMutant();
+				String[] stuff = m_info[j].split(",");
+				m.setType(stuff[0]);
+				m.setLine(Integer.parseInt(stuff[1]));
+				m.setKilled(k_info[j]);
+				m.addMutant(conv.getMutantCode(j, m.getLine()));
+				m.addOriginal(conv.getOriginalCode(m.getLine()));
+				cow_ants.add(m);
 			}
 			return cow_ants;
 		} catch (IOException e) {

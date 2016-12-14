@@ -20,6 +20,16 @@ public class caseMutant implements Mutant{
 	private String original = "";
 	
 	/**
+	 * @variable 
+	 */
+	private String my_type = "";
+	
+	/**
+	 * @variable 
+	 */
+	private int line_number = -1;
+	
+	/**
 	 * 
 	 * @return boolean
 	 */
@@ -70,6 +80,27 @@ public class caseMutant implements Mutant{
 	 */
 	public void setKilled(boolean status){
 		this.killed = status;
+	}
+
+	@Override
+	public void setType(String type) {
+		my_type = type;
+	}
+
+	@Override
+	public String getType() {
+		return my_type;
+	}
+
+	@Override
+	public void setLine(int line) {
+		line_number = line;
+		
+	}
+
+	@Override
+	public int getLine() {
+		return line_number;
 	}
 	
 }
