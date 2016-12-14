@@ -2,6 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.util.Collection;
 
@@ -9,7 +10,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 import mutant.Mutant;
 
@@ -35,7 +35,8 @@ public class OriginalCodeView extends ViewComponent{
 		OGCodePanel.setLocation(150, 30);
 		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		OGCodePanel.add(new JLabel("Original Code"));
-		textArea = new JTextArea(5,20);
+		textArea = new JTextArea();
+		textArea.setPreferredSize(new Dimension(400,50));
 		textArea.setEditable(false);
 		textArea.setText(m.showOriginal());
 		OGCodePanel.add(textArea);

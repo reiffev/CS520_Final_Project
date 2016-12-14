@@ -2,6 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.util.Collection;
 
@@ -36,7 +37,8 @@ public class MutantCodeView extends ViewComponent{
 		mcv.setLocation(150, 205);
 		mcv.setBorder(BorderFactory.createLineBorder(Color.black));
 		mcv.add(new JLabel("Mutant Code"));
-		textArea = new JTextArea(5,20);
+		textArea = new JTextArea();
+		textArea.setPreferredSize(new Dimension(400,50));
 		textArea.setEditable(false);
 		textArea.setText(m.showOriginal());
 		mcv.add(textArea);
