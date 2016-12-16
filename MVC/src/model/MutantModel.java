@@ -10,15 +10,15 @@ import view.View;
 import reader.TriangleMutantReader;
 
 public class MutantModel implements Model{
-	
+
 	private ArrayList<View> views = new ArrayList<View>();
-		
+
 		// Store all collected numbers
 	private ArrayList<Mutant> mutants = new ArrayList<Mutant>();
-	
+
 	private Mutant current;
 	private JButton button;
-	
+
 	TriangleMutantReader reader = new TriangleMutantReader("this");
 	
 	@Override
@@ -42,13 +42,13 @@ public class MutantModel implements Model{
 			v.update(mutants, current, button);
 		}
 	}
-	
+
 	public ArrayList<Mutant> getMutants(){
 		mutants = reader.getResults();
 		current = mutants.get(0);
 		return mutants;
 	}
-	
+
 	public void changeCurrentMutant(int num, JButton b){
 		current = mutants.get(num-1);
 		button = b;

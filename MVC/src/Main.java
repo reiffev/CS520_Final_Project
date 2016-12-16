@@ -13,8 +13,8 @@ public class Main {
     public static void main(String ... args) {
     
     //Model
-    	Model mutant_model = new MutantModel();
-    	ArrayList<Mutant> start = ((MutantModel) mutant_model).getMutants();
+    	MutantModel mutant_model = new MutantModel();
+    	ArrayList<Mutant> start = mutant_model.getMutants();
     	
     //Controllers
     	MutantController controller = new MutantController();

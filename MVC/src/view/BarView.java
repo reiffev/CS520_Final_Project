@@ -59,7 +59,7 @@ public class BarView extends ViewComponent{
 		bar.add(new JLabel("/"));
 		bar.add(k);
 		
-		bar.add(new JLabel("Currently viewing mutant: "));
+		bar.add(new JLabel("Currently viewing mutant:"));
 		
 		curr = new JLabel();
 		
