@@ -1,8 +1,10 @@
 package controller;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 import model.Model;
@@ -14,6 +16,7 @@ public class MutantController implements Controller{
 
 	private MutantModel model;
 	private TriangleMutantReader reader = new TriangleMutantReader("this");
+	private JButton lastButton = null;
 	
 	@Override
 	public void setModel(Model m) {
@@ -31,6 +34,11 @@ public class MutantController implements Controller{
             //do something with the registered model
     		//System.out.println("hello "+ e.getSource());
     		JButton temp = (JButton) e.getSource();
+    		temp.setBorder(BorderFactory.createLineBorder(Color.black));
+    		if(lastButton != null){
+    			lastButton.setBorder(BorderFactory.createEtchedBorder());
+    		}
+    		lastButton = temp;
     		int n = Integer.parseInt(temp.getName());
     		//System.out.println(n);
     		model.changeCurrentMutant(n, temp);
