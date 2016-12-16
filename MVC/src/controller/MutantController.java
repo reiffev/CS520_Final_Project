@@ -35,7 +35,7 @@ public class MutantController implements Controller{
     		//System.out.println("hello "+ e.getSource());
     		JButton temp = (JButton) e.getSource();
     		temp.setBorder(BorderFactory.createLineBorder(Color.black));
-    		if(lastButton != null){
+    		if(lastButton != null && lastButton != temp){
     			lastButton.setBorder(BorderFactory.createEtchedBorder());
     		}
     		lastButton = temp;
