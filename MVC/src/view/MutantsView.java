@@ -36,7 +36,7 @@ public class MutantsView extends ViewComponent{
 	}
 	
 	@Override
-	public void update(Collection<Mutant> data, Mutant current) {
+	public void update(Collection<Mutant> data, Mutant current, JButton button) {
 		// TODO Auto-generated method stub
 		d = (ArrayList<Mutant>) data;
 	}

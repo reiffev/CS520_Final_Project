@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,6 +19,8 @@ public class BarView extends ViewComponent{
 	private JPanel bar;
 	
 	private ArrayList<Mutant> d;
+	private JButton b;
+	private JLabel curr;
 	
 	public BarView(ArrayList<Mutant> start){
 		d = start;
@@ -25,9 +28,14 @@ public class BarView extends ViewComponent{
 	}
 
 	@Override
-	public void update(Collection<Mutant> data, Mutant current) {
+	public void update(Collection<Mutant> data, Mutant current, JButton button) {
 		// TODO Auto-generated method stub
 		d = (ArrayList<Mutant>) data;
+		curr.setText(button.getName());
+		if(current.isKilled())
+			curr.setForeground(Color.GREEN);
+		else
+			curr.setForeground(Color.RED);
 	}
 
 	@Override
@@ -50,6 +58,12 @@ public class BarView extends ViewComponent{
 		bar.add(l);
 		bar.add(new JLabel("/"));
 		bar.add(k);
+		
+		bar.add(new JLabel("Currently viewing mutant: "));
+		
+		curr = new JLabel();
+		
+		bar.add(curr);
 		
 		bar.setBackground(Color.GRAY);
 		

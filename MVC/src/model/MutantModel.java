@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.swing.JButton;
+
 import mutant.Mutant;
 import view.View;
 import reader.TriangleMutantReader;
@@ -15,6 +17,7 @@ public class MutantModel implements Model{
 	private ArrayList<Mutant> mutants = new ArrayList<Mutant>();
 	
 	private Mutant current;
+	private JButton button;
 	
 	TriangleMutantReader reader = new TriangleMutantReader("this");
 	
@@ -36,7 +39,7 @@ public class MutantModel implements Model{
 	@Override
 	public void changed() {
 		for (View v : views){
-			v.update(mutants, current);
+			v.update(mutants, current, button);
 		}
 	}
 	
@@ -46,9 +49,10 @@ public class MutantModel implements Model{
 		return mutants;
 	}
 	
-	public void changeCurrentMutant(int num){
-		current = mutants.get(num);
-		System.out.println(current.showMutant());
+	public void changeCurrentMutant(int num, JButton b){
+		current = mutants.get(num-1);
+		button = b;
+		//System.out.println(current.showMutant());
 		this.changed();
 	}
 

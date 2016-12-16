@@ -19,7 +19,7 @@ public class ComplexView extends ViewComponent {
 	}
 
 	@Override
-	public void update(Collection<Mutant> data, Mutant current) {
+	public void update(Collection<Mutant> data, Mutant current, JButton Button) {
 		// not used
 		
 	}

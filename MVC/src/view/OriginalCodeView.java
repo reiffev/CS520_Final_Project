@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 import java.util.Collection;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -23,7 +24,7 @@ public class OriginalCodeView extends ViewComponent{
 		m = start;
 	}
 	@Override
-	public void update(Collection<Mutant> data, Mutant current) {
+	public void update(Collection<Mutant> data, Mutant current, JButton button) {
 		m = current;
 		textArea.setText(current.showOriginal());
 	}
