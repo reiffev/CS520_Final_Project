@@ -45,7 +45,7 @@ public class MutantModel implements Model{
 
 	public ArrayList<Mutant> getMutants(){
 		mutants = reader.getResults();
-		current = mutants.get(0);
+		//current = mutants.get(0);
 		return mutants;
 	}
 
@@ -53,6 +53,12 @@ public class MutantModel implements Model{
 		current = mutants.get(num-1);
 		button = b;
 		//System.out.println(current.showMutant());
+		this.changed();
+	}
+	
+	public void setMutant(ArrayList<Mutant> m){
+		mutants = m;
+		//current = mutants.get(0);
 		this.changed();
 	}
 

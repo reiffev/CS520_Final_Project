@@ -14,7 +14,7 @@ public class Main {
     
     //Model
     	MutantModel mutant_model = new MutantModel();
-    	ArrayList<Mutant> start = mutant_model.getMutants();
+    	//ArrayList<Mutant> start = mutant_model.getMutants();
     	
     //Controllers
     	MutantController controller = new MutantController();
@@ -22,23 +22,25 @@ public class Main {
     	
     //Create the view
     	ComplexView main = new ComplexView();
-    	BarView bar = new BarView(start);
+    	BarView bar = new BarView();
     	main.addView(bar);
-    	MutantsView mutantView = new MutantsView(start);
+    	MutantsView mutantView = new MutantsView();
     	main.addView(mutantView);
-    	OriginalCodeView ocv = new OriginalCodeView(start.get(0));
+    	OriginalCodeView ocv = new OriginalCodeView();
     	main.addView(ocv);
-    	MutantCodeView mcv = new MutantCodeView(start.get(0));
+    	MutantCodeView mcv = new MutantCodeView();
     	main.addView(mcv);
     	
     	mutantView.connectMutantController(controller);
-    	
+ 
     	mutant_model.register(bar);
     	mutant_model.register(mutantView);
     	mutant_model.register(ocv);
     	mutant_model.register(mcv);
     	
-    	main.draw();
+    	controller.readMutants();
     	
+    	main.draw();
+
     }
 }

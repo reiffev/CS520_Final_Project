@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import mutant.Mutant;
+import mutant.caseMutant;
 
 public class OriginalCodeView extends ViewComponent{
 	
@@ -20,13 +21,16 @@ public class OriginalCodeView extends ViewComponent{
 	
 	private Mutant m;
 	
-	public OriginalCodeView(Mutant start){
-		m = start;
+	public OriginalCodeView(){
+		textArea = new JTextArea();
+		m = new caseMutant();
 	}
 	@Override
 	public void update(Collection<Mutant> data, Mutant current, JButton button) {
 		m = current;
-		textArea.setText(current.showOriginal());
+		if(current!=null){
+			textArea.setText(current.showOriginal());
+		}
 	}
 	
 	@Override
@@ -36,10 +40,11 @@ public class OriginalCodeView extends ViewComponent{
 		OGCodePanel.setLocation(150, 30);
 		OGCodePanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		OGCodePanel.add(new JLabel("Original Code"));
-		textArea = new JTextArea();
 		textArea.setPreferredSize(new Dimension(400,50));
 		textArea.setEditable(false);
-		textArea.setText(m.showOriginal());
+		if(m!=null){
+			textArea.setText(m.showOriginal());
+		}
 		OGCodePanel.add(textArea);
 		container.add(OGCodePanel, BorderLayout.CENTER);
 	}

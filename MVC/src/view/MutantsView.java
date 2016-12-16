@@ -25,8 +25,8 @@ public class MutantsView extends ViewComponent{
 	
 	private ArrayList<Mutant> d;
 	
-	public MutantsView(ArrayList<Mutant> start){
-		d = start;
+	public MutantsView(){
+		d = new ArrayList<Mutant>();
 		innerPanel =  new JPanel(new FlowLayout(FlowLayout.CENTER));
 		mutantPane = new JScrollPane(innerPanel);
 	}
@@ -48,10 +48,12 @@ public class MutantsView extends ViewComponent{
 		innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
 		for(int i = 0; i < d.size(); i++){
 			JButton temp = new JButton("Mutant " + (i+1));
-			if(d.get(i).isKilled())
+			if(d.get(i).isKilled()){
 				temp.setBackground(Color.GREEN);
-			else
+			}
+			else{
 				temp.setBackground(Color.RED);
+			}
 			temp.setName(String.valueOf((i+1)));
 			temp.setOpaque(true);
 			//temp.setBorderPainted(true);

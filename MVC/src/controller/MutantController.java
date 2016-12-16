@@ -1,19 +1,23 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 
 import model.Model;
 import model.MutantModel;
+import mutant.Mutant;
+import reader.TriangleMutantReader;
 
 public class MutantController implements Controller{
 
-	private Model model;
+	private MutantModel model;
+	private TriangleMutantReader reader = new TriangleMutantReader("this");
 	
 	@Override
 	public void setModel(Model m) {
-		this.model = m;
+		this.model = (MutantModel) m;
 	}
 
 	@Override
@@ -29,12 +33,17 @@ public class MutantController implements Controller{
     		JButton temp = (JButton) e.getSource();
     		int n = Integer.parseInt(temp.getName());
     		//System.out.println(n);
-    		((MutantModel) model).changeCurrentMutant(n, temp);
+    		model.changeCurrentMutant(n, temp);
     	} catch (Exception exception){
     		//System.out.println(exception.);
     		exception.printStackTrace();
     	}
 		
+	}
+	
+	public void readMutants(){
+		ArrayList<Mutant> mutants = reader.getResults();
+		model.setMutant(mutants);
 	}
 
 }

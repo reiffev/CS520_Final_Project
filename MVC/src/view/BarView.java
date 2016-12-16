@@ -19,11 +19,10 @@ public class BarView extends ViewComponent{
 	private JPanel bar;
 	
 	private ArrayList<Mutant> d;
-	private JButton b;
 	private JLabel curr;
 	
-	public BarView(ArrayList<Mutant> start){
-		d = start;
+	public BarView(){
+		d = new ArrayList<Mutant>();
 		bar = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	}
 
@@ -31,11 +30,15 @@ public class BarView extends ViewComponent{
 	public void update(Collection<Mutant> data, Mutant current, JButton button) {
 		// TODO Auto-generated method stub
 		d = (ArrayList<Mutant>) data;
-		curr.setText(button.getName());
-		if(current.isKilled())
-			curr.setForeground(Color.GREEN);
-		else
-			curr.setForeground(Color.RED);
+		if(button!=null){
+			curr.setText(button.getName());
+			if(current.isKilled()){
+				curr.setForeground(Color.GREEN);
+			}
+			else{
+				curr.setForeground(Color.RED);
+			}
+		}
 	}
 
 	@Override

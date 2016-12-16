@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import mutant.Mutant;
+import mutant.caseMutant;
 
 public class MutantCodeView extends ViewComponent{
 	
@@ -20,16 +21,18 @@ public class MutantCodeView extends ViewComponent{
 	
 	private Mutant m;
 	
-	public MutantCodeView(Mutant start){
-		m = start;
+	public MutantCodeView(){
+		m = new caseMutant();
 	}
 	
 	@Override
 	public void update(Collection<Mutant> data, Mutant current, JButton button) {
 		m = current;
-		textArea.setText(m.showMutant());
-		textArea.append("Type: "+m.getType()+"\n");
-		textArea.append("Line Number: "+m.getLine()+"\n");
+		if(current != null){
+			textArea.setText(m.showMutant());
+			textArea.append("Type: "+m.getType()+"\n");
+			textArea.append("Line Number: "+m.getLine()+"\n");
+		}
 	}
 	
 
@@ -43,9 +46,11 @@ public class MutantCodeView extends ViewComponent{
 		textArea = new JTextArea(7,20);
 		textArea.setPreferredSize(new Dimension(400,50));
 		textArea.setEditable(false);
-		textArea.setText(m.showOriginal());
-		textArea.append("Type: "+m.getType()+"\n");
-		textArea.append("Line Number: "+m.getLine()+"\n");
+		if(m!=null){
+			textArea.setText(m.showOriginal());
+			textArea.append("Type: "+m.getType()+"\n");
+			textArea.append("Line Number: "+m.getLine()+"\n");
+		}
 		mcv.add(textArea);
 		container.add(mcv, BorderLayout.CENTER);
 	}
