@@ -1,6 +1,6 @@
 # CS520_Final_Project
 
-#DESIGN CHOICES
+##DESIGN CHOICES
 
 For our UI design, we used the MVC Architecture design pattern.
 
@@ -10,8 +10,8 @@ For this program we are using the output from mutation.sh, which includes the ki
 
 Currently, we have ActionListeners on the Mutant JButtons in the MutantsView. When the mutant is selected, the mutants original code and mutant code will be displayed to the right in the OriginalCodeView and MutantCodeView
 
-#HOW TO RUN
+##HOW TO RUN
 
 Download/Clone the repository. Go into your files and double click on the JAR file located in the MVC folder.
 
-To run in the bash shell, use the command java -jar CS520_Final_Project.jar
+To run in the bash shell, use the command <code>java -jar CS520_Final_Project.jar<code>
