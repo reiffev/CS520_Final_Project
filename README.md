@@ -12,4 +12,6 @@ Currently, we have ActionListeners on the Mutant JButtons in the MutantsView. Wh
 
 #HOW TO RUN
 
-Download the JAR file
+Download/Clone the repository. Go into your files and double click on the JAR file located in the MVC folder.
+
+To run in the bash shell, use the command java -jar CS520_Final_Project.jar
